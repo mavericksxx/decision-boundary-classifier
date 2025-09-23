@@ -30,8 +30,8 @@ const Results: React.FC<ResultsProps> = ({ result, boundary }) => {
       {showPopup && (
         <div className="popup-overlay" onClick={() => setShowPopup(false)}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <h2>🎉 Congratulations!</h2>
-            <p className="solution-key"><strong>The solution key is oogabooga</strong></p>
+            <h2>Congratulations!</h2>
+            <p className="solution-key"><strong>The solution key is GDG{"{1in3ar_c1assifi3r}"}</strong></p>
             <button onClick={() => setShowPopup(false)} className="popup-close">
               Close
             </button>
