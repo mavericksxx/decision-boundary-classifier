@@ -12,7 +12,7 @@ const Results: React.FC<ResultsProps> = ({ result, boundary }) => {
   const ideal = getIdealSolution();
   
   // Check if solution achieves perfect separation AND is very close to the mathematical ideal
-  // With the constraint points, only slope≈1.0 and intercept≈0.0 should achieve perfect separation
+  // With the constraint points, only slope≈-0.5 and intercept≈0.7 should achieve perfect separation
   const isExactSolution = result.isPerfectSeparation && 
     Math.abs(boundary.slope - ideal.slope) < 0.02 &&
     Math.abs(boundary.intercept - ideal.intercept) < 0.02;
@@ -52,8 +52,8 @@ const Results: React.FC<ResultsProps> = ({ result, boundary }) => {
         </div>
         <div className="stat-item">
           <span className="stat-label">Accuracy:</span>
-          <span className={`stat-value ${result.isPerfectSeparation ? 'success' : ''}`}>
-            {((result.totalPoints - result.misclassified) / result.totalPoints * 100).toFixed(1)}%
+          <span className={`stat-value ${isExactSolution ? 'success' : ''}`}>
+            {isExactSolution ? '100.0%' : ((result.totalPoints - result.misclassified) / result.totalPoints * 100).toFixed(1) + '%'}
           </span>
         </div>
       </div>
