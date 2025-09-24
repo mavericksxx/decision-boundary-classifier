@@ -50,12 +50,6 @@ const Results: React.FC<ResultsProps> = ({ result, boundary }) => {
             {result.misclassified}
           </span>
         </div>
-        <div className="stat-item">
-          <span className="stat-label">Accuracy:</span>
-          <span className={`stat-value ${isExactSolution ? 'success' : ''}`}>
-            {isExactSolution ? '100.0%' : ((result.totalPoints - result.misclassified) / result.totalPoints * 100).toFixed(1) + '%'}
-          </span>
-        </div>
       </div>
       
       {isExactSolution && (
