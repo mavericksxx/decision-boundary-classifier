@@ -14,8 +14,8 @@ const Results: React.FC<ResultsProps> = ({ result, boundary }) => {
   // Check if solution achieves perfect separation AND is very close to the mathematical ideal
   // With the constraint points, only slope≈-0.5 and intercept≈0.7 should achieve perfect separation
   const isExactSolution = result.isPerfectSeparation && 
-    Math.abs(boundary.slope - ideal.slope) < 0.02 &&
-    Math.abs(boundary.intercept - ideal.intercept) < 0.02;
+    Math.abs(boundary.slope - ideal.slope) < 0.005 &&
+    Math.abs(boundary.intercept - ideal.intercept) < 0.005;
 
   // Show popup when exact solution is found
   useEffect(() => {
