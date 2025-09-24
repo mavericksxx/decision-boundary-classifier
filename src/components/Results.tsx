@@ -58,6 +58,13 @@ const Results: React.FC<ResultsProps> = ({ result, boundary }) => {
         </div>
       )}
       
+      {result.misclassified === 0 && !isExactSolution && (
+        <div className="almost-there-message">
+          <h3>🎯 You're almost there! Keep fine-tuning!</h3>
+          <p>Perfect separation achieved! Now find the exact mathematical solution.</p>
+        </div>
+      )}
+      
       {!result.isPerfectSeparation && (
         <div className="hint">
           <p>💡 Adjust the slope and intercept to separate all blue points from red points!</p>
